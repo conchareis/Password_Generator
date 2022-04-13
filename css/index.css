@@ -1,0 +1,204 @@
+/* Colors ----------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* Grid Breakpoints ------------------------------------------------------------------------------------------------------------------------------------------*/
+/* Global Styles----------------------------------------------------------------------------------------------------------------------------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(90deg, #68e0cf 0%, #764ba2 50%, #667eea 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+button {
+  border: 0;
+  outline: 0;
+}
+/* --------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+.container {
+  margin: 40px 0;
+  width: 400px;
+  padding: 10px 25px;
+  background: #0a0e31;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.45), 0 4px 8px rgba(0, 0, 0, 0.35), 0 8px 12px rgba(0, 0, 0, 0.15);
+  font-family: "Montserrat";
+}
+.container_title {
+  font-size: 1.75rem;
+  margin: 10px -5px;
+  margin-bottom: 30px;
+  color: #fff;
+  text-align-last: center;
+}
+.container_password {
+  position: relative;
+  width: 100%;
+  height: 7vh;
+}
+.container_password_title {
+  position: absolute;
+  top: -20px;
+  left: 8px;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  font-size: 0.65rem;
+}
+.container_password_viewbox {
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  color: #fff;
+  text-align: center;
+  line-height: 7vh;
+}
+/* Settings ----------------------------------------------------------------------------------------------------------------------------------------------------*/
+.settings {
+  position: relative;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+.settings_title {
+  position: absolute;
+  top: -20px;
+  left: 8px;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  font-size: 0.65rem;
+}
+.settings_opt {
+  position: relative;
+  width: 100%;
+  height: 7vh;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  padding: 10px 25px;
+  color: #fff;
+  margin-bottom: 8px;
+}
+.settings_opt input {
+  /* Hide default HTML checkbox  ----------------------------------*/
+  opacity: 0;
+  position: absolute;
+}
+/* Cria o fundo do Toggle nas Opt -----------------*/
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  right: 10px;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  width: 70px;
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+/* Forma do Toggle em bolinha ----------------*/
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 9px;
+  bottom: 4.5px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+/* Quando activo o fundo muda de cor para azul  ----------------*/
+input:checked + .slider {
+  background-color: #68e0cf;
+}
+input:focus + .slider {
+  box-shadow: 0 0 0 2px white;
+}
+/* Quando activo desloca-se para a direita ----------------*/
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+/* Para ficar rendondo em vez de quadrado */
+.slider.round {
+  border-radius: 34px;
+}
+.slider.round:before {
+  border-radius: 50%;
+}
+/* Linha do Slider -----------------*/
+#slider {
+  -webkit-appearance: none;
+  width: 40vh;
+  height: 2px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.314);
+  cursor: pointer;
+  /* Bolinha do Slider -----------------*/
+}
+#slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+#slider::-webkit-slider-thumb:hover {
+  background: rgba(214, 214, 214, 0.434);
+  transform: scale(1.2);
+}
+.length_slider {
+  position: relative;
+  width: 100%;
+  height: 7vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  margin: 30px 0;
+}
+.length_title {
+  position: absolute;
+  top: -20px;
+  left: 8px;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  font-size: 0.65rem;
+}
+.generate_btn {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin: 10px 0;
+  border-radius: 8px;
+  color: #fff;
+  border: none;
+  background-image: linear-gradient(135deg, #764ba2 0%, #68e0cf 100%);
+  letter-spacing: 1px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+.generate_btn:active {
+  transform: translateY(-8%);
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.08);
+}
+/* The switch - the box around the slider */
+/* Hide default HTML checkbox */

@@ -1,0 +1,93 @@
+<html>
+<html lang="en" ></html>
+<head>
+    <meta charset="UTF-8">
+    <title>Random Password Generator - HTML | CSS | JS</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css'>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat&amp;display=swap'>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+    <body>
+        
+       <div class="container">
+
+            <h2 class="container_title">Password Generator</h2>
+
+            <div class="container_password">
+                
+                <span class="container_password_title">Generated Password</span>
+
+                <div class="container_password_viewbox" id="result">Click Generate Password</div>
+
+            </div>
+
+            <div class="lenght">
+
+                <div class="lenght_title">
+
+                    <div class="lenght_title_number"></div>
+
+                </div>
+
+                <div class="length_slider" data-min="6" data-max="12">
+
+                    <div class="length_title" data-length='0'>length:</div>
+
+                    <input id="slider" type="range" min="6" max="12" value="8" />
+
+                </div>
+
+            </div>
+
+            <div class="settings">
+                
+                <div class="settings_title">
+                    <span>Settings</span>
+                </div>
+
+                <!-- <div class="settings_opt">
+                    <label for="uppercase">
+                        Include Uppercase
+                        <span class="slider round"></span>
+                        <input type="checkbox" id="settings_upp" checked>
+                    </label>
+                </div> -->
+
+                <div class="settings_opt">
+                    <label class="switch">
+                        Include Uppercase
+                        <input type="checkbox">
+                        <span class="slider round" id="settings_upp" checked></span>
+                    </label> 
+                </div>
+
+                <div class="settings_opt">
+                    <input type="checkbox" id="settings_low" checked>
+                    <label for="lowercase">Include Lowercase</label>
+                </div>
+
+                <div class="settings_opt">
+                    <input type="checkbox" id="settings_numbers" checked>
+                    <label for="numbers">Include Numbers</label>
+                </div>
+
+                <div class="settings_opt">
+                    <input type="checkbox" id="settings_symbols">
+                    <label for="symbols">Include Symbols</label>
+                </div>
+
+            </div>
+
+                <button class="generate_btn" id="generate"> Generate Password </button>
+
+       </div>
+
+        <script src="/index.js"></script>
+    </body>
+</html>
+
+
+
+
+
+
