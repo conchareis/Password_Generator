@@ -2,86 +2,105 @@
 <html lang="en" ></html>
 <head>
     <meta charset="UTF-8">
-    <title>Random Password Generator - HTML | CSS | JS</title>
+    <title>Password Generator</title>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css'>
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat&amp;display=swap'>
+    <script src="https://kit.fontawesome.com/5f6562391a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/index.css">
 </head>
     <body>
         
+<!-- 
+        <h2 class="title">Password Generator</h2> -->
+
+        <!-- Caixa Envolvente Principal ----------------------------------------------------------------------------------------------------------------------------------------- -->
        <div class="container">
 
-            <h2 class="container_title">Password Generator</h2>
+            <!-- <h2 class="container_title">Password Generator <i class="fa-solid fa-meteor fa-beat"></i></h2> -->
+
+            <h2 class="container_sub_title">Generate a <span id="free">free</span> <br> <span id="random"> random <span id="password"> Password </span></span><i class="fa-solid fa-meteor fa-beat"></i></h2>
+
+            <!-- <h2 class="title">Never use as Insecure Password again !</h2> -->
 
             <div class="container_password">
-                
-                <span class="container_password_title">Generated Password</span>
+                <span class="container_password_title">Generated Password <i class="fa-solid fa-bolt"></i></span>
 
-                <div class="container_password_viewbox" id="result">Click Generate Password</div>
+                <div class="container_password_right">Click to Copy</div>
+                <div class="container_password_left">Copied !</div>
+                
+                <div class="container_password_viewbox" id="result">Click the Button down there  <i class="fa-solid fa-arrow-down fa-bounce" style="padding-left:10px"></i></div>
 
             </div>
 
-            <div class="lenght">
+            <!-- Password Button Length ---------------------------------------------------------------------------------------------------------------------------------------- -->
+            <div class="length">
 
-                <div class="lenght_title">
+                    <div class="length_title_number"></div>
 
-                    <div class="lenght_title_number"></div>
-
+                <div class="length_line" data-min="4" data-max="20">
+                    <div class="length_title" data-length='0'>Password Length:</div>
+                    <input id="line" type="range" min="4" max="20" value="12" />
                 </div>
-
-                <div class="length_slider" data-min="6" data-max="12">
-
-                    <div class="length_title" data-length='0'>length:</div>
-
-                    <input id="slider" type="range" min="6" max="12" value="8" />
-
-                </div>
-
             </div>
 
-            <div class="settings">
-                
+            <!-- Settings ---------------------------------------------------------------------------------------------------------------------------------------------------- -->
+           
+           <div class="settings_container">
+
+            <!-- Toggle Button --------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+            <div class="settings" id="left">
+
                 <div class="settings_title">
-                    <span>Settings</span>
+                    <span>Select at least one Setting </span>
                 </div>
-
-                <!-- <div class="settings_opt">
-                    <label for="uppercase">
-                        Include Uppercase
-                        <span class="slider round"></span>
-                        <input type="checkbox" id="settings_upp" checked>
-                    </label>
-                </div> -->
 
                 <div class="settings_opt">
                     <label class="switch">
-                        Include Uppercase
-                        <input type="checkbox">
-                        <span class="slider round" id="settings_upp" checked></span>
+                        Uppercases 
+                        <input type="checkbox" id="settings_upp">
+                        <span class="slider round"></span>
                     </label> 
                 </div>
 
                 <div class="settings_opt">
-                    <input type="checkbox" id="settings_low" checked>
-                    <label for="lowercase">Include Lowercase</label>
-                </div>
-
-                <div class="settings_opt">
-                    <input type="checkbox" id="settings_numbers" checked>
-                    <label for="numbers">Include Numbers</label>
-                </div>
-
-                <div class="settings_opt">
-                    <input type="checkbox" id="settings_symbols">
-                    <label for="symbols">Include Symbols</label>
+                    <label class="switch">
+                        Lowercases
+                        <input type="checkbox" id="settings_low" checked> 
+                        <span class="slider round" checked>
+                    </label>
                 </div>
 
             </div>
 
-                <button class="generate_btn" id="generate"> Generate Password </button>
+            <div class="settings" id="right">
 
+                <div class="settings_opt">
+                    <label class="switch">
+                        Numbers
+                        <input type="checkbox" id="settings_numbers">
+                        <span class="slider round">
+                    </label>
+                </div>
+
+                <div class="settings_opt">
+                    <label class="switch">
+                        Symbols
+                        <input type="checkbox" id="settings_symbols">
+                        <span class="slider round">
+                    </label>
+                </div>
+            </div>
+
+        </div>
+        
+
+            <!-- Generate Password Button ---------------------------------------------------------------------------------------------------------------------------------- -->
+                <button class="generate_btn" id="generate"> Generate here a secure Password <i class="fa-solid fa-bolt fa-shake"></i></button>
        </div>
 
+       
+            <!-- END ------------------------------------------------------------------------------------------------------------------------------------------------------- -->
         <script src="/index.js"></script>
     </body>
 </html>

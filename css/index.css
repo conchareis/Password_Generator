@@ -9,7 +9,7 @@
 body {
   width: 100%;
   height: 100vh;
-  background-image: linear-gradient(90deg, #68e0cf 0%, #764ba2 50%, #667eea 100%);
+  background-image: linear-gradient(90deg, #68e0cf 0%, #764ba2 55%, #667eea 100%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,22 +18,50 @@ button {
   border: 0;
   outline: 0;
 }
-/* --------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* CAIXA ENVOLVENTE PRINCIPAL -----------------------------------------------------------------------------------------------------------------------------------------------------*/
+.title {
+  margin: 40px 0;
+  font-family: "Montserrat";
+  position: absolute;
+  top: 120px;
+  color: white;
+  letter-spacing: 0.8rem;
+  font-size: 1.6rem;
+  background: linear-gradient(90deg, #68e0cf 0%, #0b1edf 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 .container {
   margin: 40px 0;
-  width: 400px;
+  width: 600px;
   padding: 10px 25px;
-  background: #0a0e31;
-  border-radius: 10px;
+  background: #2A2A32;
+  border-radius: 35px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.45), 0 4px 8px rgba(0, 0, 0, 0.35), 0 8px 12px rgba(0, 0, 0, 0.15);
   font-family: "Montserrat";
 }
 .container_title {
-  font-size: 1.75rem;
   margin: 10px -5px;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   color: #fff;
   text-align-last: center;
+  letter-spacing: 0.6rem;
+  font-size: 1.6rem;
+}
+.container_sub {
+  margin: 10px -5px;
+  margin-bottom: 40px;
+  color: #fff;
+  text-align-last: center;
+  letter-spacing: 0.6rem;
+  font-size: 1.6rem;
+}
+.container_sub_title {
+  margin: 10px 5px;
+  margin-bottom: 40px;
+  color: #fff;
+  letter-spacing: 0.6rem;
+  font-size: 1.3rem;
 }
 .container_password {
   position: relative;
@@ -45,41 +73,75 @@ button {
   top: -20px;
   left: 8px;
   font-weight: 800;
-  color: rgba(255, 255, 255, 0.5);
+  color: #ffffff;
   text-transform: uppercase;
   font-size: 0.65rem;
 }
 .container_password_viewbox {
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
   color: #fff;
   text-align: center;
   line-height: 7vh;
 }
-/* Settings ----------------------------------------------------------------------------------------------------------------------------------------------------*/
+.container_password_right {
+  right: 15px;
+}
+.container_password_right:hover {
+  cursor: pointer;
+}
+.container_password_left {
+  left: 15px;
+}
+.container_password_left,
+.container_password_right {
+  position: absolute;
+  bottom: 4px;
+  color: #fff;
+  font-size: 0.8rem;
+  transition: all 150ms ease-in-out;
+  transform: translateY(200%);
+  opacity: 0;
+}
+#random {
+  color: #626EEA;
+}
+#password {
+  color: #68e0cf;
+}
+#free {
+  color: #916EB4;
+}
+/* SETTINGS ----------------------------------------------------------------------------------------------------------------------------------------------------*/
 .settings {
   position: relative;
   height: auto;
   display: flex;
   flex-direction: column;
+  width: 50%;
+}
+.settings_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 .settings_title {
   position: absolute;
   top: -20px;
   left: 8px;
   font-weight: 800;
-  color: rgba(255, 255, 255, 0.5);
+  color: #ffffff;
   text-transform: uppercase;
   font-size: 0.65rem;
 }
 .settings_opt {
   position: relative;
   width: 100%;
-  height: 7vh;
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 8px;
+  height: 70px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
   display: flex;
   align-items: center;
   padding: 10px 25px;
@@ -91,20 +153,26 @@ button {
   opacity: 0;
   position: absolute;
 }
+#left {
+  margin-right: 10px;
+}
+#right {
+  margin-left: 10px;
+}
+/* TOGGLE BUTTON  ----------------------------------------------------------------------------------------------------------------------------------------------------*/
 /* Cria o fundo do Toggle nas Opt -----------------*/
-/* The slider */
 .slider {
   position: absolute;
   cursor: pointer;
   top: 0;
   right: 10px;
   bottom: 0;
-  background-color: #ccc;
+  background-color: #BFBFBF;
   -webkit-transition: 0.4s;
   transition: 0.4s;
   width: 70px;
-  margin-top: 7px;
-  margin-bottom: 7px;
+  margin-top: 20px;
+  margin-bottom: 13px;
 }
 /* Forma do Toggle em bolinha ----------------*/
 .slider:before {
@@ -113,7 +181,7 @@ button {
   height: 26px;
   width: 26px;
   left: 9px;
-  bottom: 4.5px;
+  bottom: 5.5px;
   background-color: white;
   -webkit-transition: 0.4s;
   transition: 0.4s;
@@ -123,7 +191,7 @@ input:checked + .slider {
   background-color: #68e0cf;
 }
 input:focus + .slider {
-  box-shadow: 0 0 0 2px white;
+  box-shadow: 0 0 0 5px white;
 }
 /* Quando activo desloca-se para a direita ----------------*/
 input:checked + .slider:before {
@@ -138,17 +206,18 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
-/* Linha do Slider -----------------*/
-#slider {
+/* LENGHT   --------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* Linha do Lenght, aparencia mais geral e posicao -----------------*/
+#line {
   -webkit-appearance: none;
-  width: 40vh;
+  width: 465px;
   height: 2px;
   border-radius: 5px;
-  background: rgba(255, 255, 255, 0.314);
+  background: rgba(255, 255, 255, 0.5);
   cursor: pointer;
-  /* Bolinha do Slider -----------------*/
+  /* Bolinha do Lenght -----------------*/
 }
-#slider::-webkit-slider-thumb {
+#line::-webkit-slider-thumb {
   -webkit-appearance: none;
   width: 20px;
   height: 20px;
@@ -157,36 +226,59 @@ input:checked + .slider:before {
   cursor: pointer;
   transition: all 0.15s ease-in-out;
 }
-#slider::-webkit-slider-thumb:hover {
-  background: rgba(214, 214, 214, 0.434);
+#line::-webkit-slider-thumb:hover {
+  background: rgba(214, 214, 214, 0.8);
   transform: scale(1.2);
 }
-.length_slider {
+/* Linha do Lenght, aparencia mais detalhada -----------------*/
+.length_line {
   position: relative;
   width: 100%;
   height: 7vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
   margin: 30px 0;
+  /* Os numeros do Lenght -----------------*/
+}
+.length_line::before,
+.length_line::after {
+  position: absolute;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+.length_line::before {
+  content: attr(data-min);
+  left: 18px;
+}
+.length_line::after {
+  content: attr(data-max);
+  right: 14px;
+}
+.length_line .length_title::after {
+  content: attr(data-length);
+  position: absolute;
+  right: -16px;
 }
 .length_title {
   position: absolute;
   top: -20px;
   left: 8px;
   font-weight: 800;
-  color: rgba(255, 255, 255, 0.5);
+  color: #ffffff;
   text-transform: uppercase;
   font-size: 0.65rem;
 }
+/* GENERATE PASSWORD BUTTON ---------------------------------------------------------------------------------------------------------------------------------------------------*/
 .generate_btn {
   position: relative;
   width: 100%;
   height: 50px;
   margin: 10px 0;
-  border-radius: 8px;
+  border-radius: 20px;
   color: #fff;
   border: none;
   background-image: linear-gradient(135deg, #764ba2 0%, #68e0cf 100%);
@@ -198,7 +290,5 @@ input:checked + .slider:before {
 }
 .generate_btn:active {
   transform: translateY(-8%);
-  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
 }
-/* The switch - the box around the slider */
-/* Hide default HTML checkbox */

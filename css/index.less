@@ -1,10 +1,13 @@
 
 /* Colors ----------------------------------------------------------------------------------------------------------------------------------------------------*/
+@purple: #764ba2;
+@purple-blue: #667eea;
+@blue: #68e0cf;
+@dark-blue: rgb(11, 30, 223);
 
-
-@slider-bolinha-color: rgb(255, 255, 255);
-@slider-bolinha-color-hover: rgb(212, 212, 212);
-@slider-bolinha-size: 20px;
+@bolinha-color: rgb(255, 255, 255);
+@bolinha-color-hover: rgb(212, 212, 212);
+@bolinha-size: 20px;
 
 @range-track-color: rgba(255, 255, 255, 0.314);
 @range-track-height: 2px;
@@ -31,7 +34,8 @@
 body {
 	width: 100%;
 	height: 100vh;
-	background-image: linear-gradient(90deg, #68e0cf 0%, #764ba2 50%, #667eea 100% );
+	// background-image: linear-gradient(90deg, @blue 0%, @purple 50%, @purple-blue 100% );
+	background-image: linear-gradient(90deg, #68e0cf 0%, #764ba2 55%, #667eea 100%);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -42,24 +46,57 @@ button {
 	outline: 0;
 }
 
-/* --------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* CAIXA ENVOLVENTE PRINCIPAL -----------------------------------------------------------------------------------------------------------------------------------------------------*/
+.title {
+	margin: 40px 0;
+	font-family: "Montserrat";
+	position: absolute;
+	top: 120px;
+	color: white;
+	letter-spacing: 0.8rem;
+	font-size: 1.6rem;
+	background: linear-gradient(90deg, @blue 0%, @dark-blue 100% );
+	// background: linear-gradient(90deg, @dark-blue 0%, @blue 100% );
+	// background: -webkit-linear-gradient(@purple-blue, @purple);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
 
 .container {
 	margin: 40px 0;
-	width: 400px;
+	width: 600px;
 	// height: 600px;
 	padding: 10px 25px;
-	background: #0a0e31;
-	border-radius: 10px;
+	// background: #0a0e31;
+	background: #2A2A32;
+	border-radius: 35px;
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.45), 0 4px 8px rgba(0, 0, 0, 0.35), 0 8px 12px rgba(0, 0, 0, 0.15);
 	font-family: "Montserrat";
 
 	&_title {
-		font-size: 1.75rem;
 		margin: 10px -5px;
-		margin-bottom: 30px;
+		margin-bottom: 25px;
 		color: #fff;
 		text-align-last: center;
+		letter-spacing: 0.6rem;
+		font-size: 1.6rem;
+	}
+
+	&_sub {
+		margin: 10px -5px;
+		margin-bottom: 40px;
+		color: #fff;
+		text-align-last: center;
+		letter-spacing: 0.6rem;
+		font-size: 1.6rem;
+
+		&_title {
+			margin: 10px 5px;
+			margin-bottom: 40px;
+			color: #fff;
+			letter-spacing: 0.6rem;
+			font-size: 1.3rem;
+		}
 	}
 
 	&_password {
@@ -72,7 +109,8 @@ button {
 			top: -20px;
 			left: 8px;
 			font-weight: 800;
-			color: rgba(255, 255, 255, 0.5);
+			// color:rgba(255, 255, 255, 1);
+			color:rgba(255, 255, 255, 1);
 			text-transform: uppercase;
 			font-size: 0.65rem;
 		}
@@ -80,8 +118,8 @@ button {
 		&_viewbox {
 		width: 100%;
     	height: 100%;
-    	background: rgba(255, 255, 255, 0.08);
-    	border-radius: 8px;
+    	background: rgba(255, 255, 255, 0.1);
+    	border-radius: 20px;
     	color: #fff;
     	text-align: center;
     	line-height: 7vh;
@@ -90,32 +128,87 @@ button {
 	}
 }
 
+.container_password {
+
+	&_right {
+		right: 15px;
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
+	
+	&_left {
+		left: 15px;
+
+	}
+
+	&_left,
+	&_right {
+		position: absolute;
+		bottom: 4px;
+		color: #fff;
+		font-size: 0.8rem;
+		transition: all 150ms ease-in-out;
+		transform: translateY(200%);
+		opacity: 0;
+	}
+}
+
+#random {
+	color: #626EEA;
+}
+
+#password {
+	color: @blue;
+}
+
+#free {
+// color: #BAA5D0;
+// color:#9F81BD;
+color: #916EB4;
+}
 
 
-/* Settings ----------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* SETTINGS ----------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 .settings {
     position: relative;
     height: auto;
     display: flex;
     flex-direction: column;
+	width: 50%;
+
+	&_container {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+	}
 
 	&_title {
+		// position: absolute;
+    	// bottom: 464px;
+    	// left: 673px;
+    	// font-weight: 800;
+    	// color:rgba(255, 255, 255, 1);
+    	// text-transform: uppercase;
+    	// font-size: 0.65rem;
+
 		position: absolute;
-    	top: -20px;
-    	left: 8px;
-    	font-weight: 800;
-    	color: rgba(255, 255, 255, 0.5);
-    	text-transform: uppercase;
-    	font-size: 0.65rem;
+		top: -20px;
+		left: 8px;
+		font-weight: 800;
+		color:rgba(255, 255, 255, 1);
+		text-transform: uppercase;
+		font-size: 0.65rem;
 	}
 
 	&_opt {
 		position: relative;
 		width: 100%;
-		height: 7vh;
-		background: rgba(255, 255, 255, 0.08);
-		border-radius: 8px;
+		height: 70px;
+		background: rgba(255, 255, 255, 0.1);
+		border-radius: 20px;
 		display: flex;
 		align-items: center;
 		padding: 10px 25px;
@@ -126,12 +219,21 @@ button {
 			/* Hide default HTML checkbox  ----------------------------------*/
 			opacity: 0;
 			position: absolute;
+		}
 	}
 }
+
+#left {
+	margin-right: 10px;
 }
 
+#right {
+	margin-left: 10px;
+}
+
+/* TOGGLE BUTTON  ----------------------------------------------------------------------------------------------------------------------------------------------------*/
+
 /* Cria o fundo do Toggle nas Opt -----------------*/
-/* The slider */
 .slider {
 	position: absolute;
 	cursor: pointer;
@@ -139,14 +241,15 @@ button {
 	// left: 0;
 	right: 10px;
 	bottom: 0;
-	background-color: #ccc;
-	// background-color: #764ba2;
+	// background-color: #916EB4;
+	background-color: #BFBFBF;
+	// background-color: @purple;
 	// background-color: rgba(118, 75, 162, 0.5);
 	-webkit-transition: .4s;
 	transition: .4s;
 	width: 70px;
-	margin-top: 7px;
-	margin-bottom: 7px;
+	margin-top: 20px;
+	margin-bottom: 13px;
 }
 
 /* Forma do Toggle em bolinha ----------------*/
@@ -156,105 +259,106 @@ button {
 	height: 26px;
 	width: 26px;
 	left: 9px;
-	bottom: 4.5px;
+	bottom: 5.5px;
 	background-color: white;
 	-webkit-transition: .4s;
 	transition: .4s;
-  }
+}
   
-    /* Quando activo o fundo muda de cor para azul  ----------------*/
-  input:checked + .slider {
-	background-color: #68e0cf;
-  }
+/* Quando activo o fundo muda de cor para azul  ----------------*/
+input:checked + .slider {
+	background-color: @blue;
+}
   
-  input:focus + .slider {
-	box-shadow: 0 0 0 2px white;
-  }
+input:focus + .slider {
+	box-shadow: 0 0 0 5px white;
+}
 
-  /* Quando activo desloca-se para a direita ----------------*/
-  input:checked + .slider:before {
+/* Quando activo desloca-se para a direita ----------------*/
+input:checked + .slider:before {
 	-webkit-transform: translateX(26px);
 	-ms-transform: translateX(26px);
 	transform: translateX(26px);
-  }
+}
   
-  /* Para ficar rendondo em vez de quadrado */
-  .slider.round {
+ /* Para ficar rendondo em vez de quadrado */
+.slider.round {
 	border-radius: 34px;
-  }
+}
   
-  .slider.round:before {
+.slider.round:before {
 	border-radius: 50%;
-  }
+}
 
+/* LENGHT   --------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
-/* Linha do Slider -----------------*/
-#slider {
+/* Linha do Lenght, aparencia mais geral e posicao -----------------*/
+#line {
 	-webkit-appearance: none;
-	width: 40vh;
+	width: 465px;
 	height: 2px;
 	border-radius: 5px;
-	background: rgba(255, 255, 255, 0.314);
+	background: rgba(255, 255, 255, 0.5);
 	cursor: pointer;
 
-		/* Bolinha do Slider -----------------*/
+	/* Bolinha do Lenght -----------------*/
 	&::-webkit-slider-thumb {
 		-webkit-appearance: none;
-		width: @slider-bolinha-size;
-		height: @slider-bolinha-size;
+		width: @bolinha-size;
+		height: @bolinha-size;
 		border-radius: 50%;
-		background: @slider-bolinha-color;
+		background: @bolinha-color;
 		cursor: pointer;
 		transition: all 0.15s ease-in-out;
 
 		&:hover {
-			background: rgba(214, 214, 214, 0.434);
+			background: rgba(214, 214, 214, 0.8);
 			transform: scale(1.2);
 		}
 	}
-	
-		// &::-moz-range-thumb {
-		// 	width: @slider-bolinha-size;
-		// 	height: @slider-bolinha-size;
-		// 	border: 0;
-		// 	border-radius: 50%;
-		// 	background: @slider-bolinha-color;
-		// 	cursor: pointer;
-		// 	// transition: background 0.15s ease-in-out;
-		// 	transition: 0.15s ease-in-out;
-	
-		// 	&:hover {
-		// 		background: @slider-bolinha-color-hover;
-		// 	}
-		// }
 }
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+/* Linha do Lenght, aparencia mais detalhada -----------------*/
 .length {
 
-	&_slider {
+	&_line {
 		position: relative;
    		width: 100%;
     	height: 7vh;;
     	display: flex;
     	justify-content: center;
     	align-items: center;
-    	background: rgba(255, 255, 255, 0.08);
-    	border-radius: 8px;
+    	background: rgba(255, 255, 255, 0.1);
+    	border-radius: 20px;
     	margin: 30px 0;
+		
+/* Os numeros do Lenght -----------------*/
+		&::before,
+		&::after {
+			position: absolute;
+			color: #fff;
+			font-size: 0.85rem;
+			font-weight: bold;
+		}
+	
+		&::before {
+			content: attr(data-min);
+			left: 18px;
+		}
+	
+		&::after {
+			content: attr(data-max);
+			right: 14px;
+		}
+	
+		.length_title::after {
+			content: attr(data-length);
+			position: absolute;
+			right: -16px;
+			// color: #fff;
+		}
 	}
 
 	&_title {
@@ -262,12 +366,15 @@ button {
     	top: -20px;
     	left: 8px;
     	font-weight: 800;
-    	color: rgba(255, 255, 255, 0.5);
+    	color:rgba(255, 255, 255, 1);
     	text-transform: uppercase;
     	font-size: 0.65rem;
 	}
 }
 
+
+
+/* GENERATE PASSWORD BUTTON ---------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 .generate {
 
@@ -276,10 +383,10 @@ button {
 		width: 100%;
 		height: 50px;
 		margin: 10px 0;
-		border-radius: 8px;
+		border-radius: 20px;
 		color: #fff;
 		border: none;
-		background-image: linear-gradient(135deg, #764ba2 0%, #68e0cf 100%);
+		background-image: linear-gradient(135deg, @purple 0%, @blue 100%);
 		letter-spacing: 1px;
 		font-weight: bold;
 		text-transform: uppercase;
@@ -288,27 +395,16 @@ button {
 
 		&:active {
 			transform: translateY(-8%);
-			box-shadow: 0 4px 8px rgba(255, 255, 255, 0.08);
+			box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
 		}
 	}
 }
 
 
-/* The switch - the box around the slider */
-// .switch {
-// 	position: relative;
-// 	display: inline-block;
-// 	width: 60px;
-// 	height: 34px;
-//   }
-  
-  /* Hide default HTML checkbox */
-//   .switch input {
-// 	opacity: 0;
-// 	width: 0;
-// 	height: 0;
-//   }
-  
+
+
+
+
 
 
 
