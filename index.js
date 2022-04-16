@@ -19,6 +19,7 @@
 	// 4.2 - Get from the DOM the Button to GENERATE the password.
 	// 4.3 - When the button GENERATE is clicked, the Password is GENERATED.
 		// 4.3.1 - The COPY text appears and the COPIED the text remains hidden.
+// 5 - Get the Current Year 
 
 
 
@@ -183,7 +184,8 @@ console.clear();
 		copiedInfo.style.opacity = "0";
 	});
 
+// 5 - Get the Current Year -------------------------------------------------------------------------------------------------------------------------------------------------/
+
+document.getElementById("year").innerHTML = new Date().getFullYear();
+
 // THE END ------------------------------------------------------------------------------------------------------------------------------------------------------------------------/
-
-
-

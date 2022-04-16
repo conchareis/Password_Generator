@@ -85,6 +85,7 @@ button {
   color: #fff;
   text-align: center;
   line-height: 7vh;
+  letter-spacing: 0.1rem;
 }
 .container_password_right {
   right: 15px;
@@ -147,6 +148,7 @@ button {
   padding: 10px 25px;
   color: #fff;
   margin-bottom: 8px;
+  letter-spacing: 0.2rem;
 }
 .settings_opt input {
   /* Hide default HTML checkbox  ----------------------------------*/
@@ -287,8 +289,38 @@ input:checked + .slider:before {
   text-transform: uppercase;
   cursor: pointer;
   transition: all 200ms ease;
+  letter-spacing: 0.1rem;
 }
 .generate_btn:active {
   transform: translateY(-8%);
   box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+.copyright {
+  flex: 100%;
+  flex-wrap: wrap;
+  text-align: center;
+  position: absolute;
+  bottom: 20px;
+  font-size: 9px;
+  font-weight: 600;
+  color: #2A2A32;
+  font-family: Montserrat;
+  letter-spacing: 5px;
+}
+.copyright i {
+  padding-right: 10px;
+  font-size: 10px;
+  color: #2A2A32;
+}
+#terms:hover {
+  color: #68e0cf;
+  cursor: pointer;
+}
+#concha {
+  text-decoration: none;
+  color: #2A2A32;
+}
+#concha:hover {
+  color: white;
+  cursor: pointer;
 }
