@@ -1,6 +1,5 @@
-/* Colors ----------------------------------------------------------------------------------------------------------------------------------------------------*/
-/* Grid Breakpoints ------------------------------------------------------------------------------------------------------------------------------------------*/
-/* Global Styles----------------------------------------------------------------------------------------------------------------------------------------------*/
+/* COLORS ----------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* GLOBAL STYLES ----------------------------------------------------------------------------------------------------------------------------------------------*/
 * {
   margin: 0;
   padding: 0;
@@ -18,19 +17,7 @@ button {
   border: 0;
   outline: 0;
 }
-/* CAIXA ENVOLVENTE PRINCIPAL -----------------------------------------------------------------------------------------------------------------------------------------------------*/
-.title {
-  margin: 40px 0;
-  font-family: "Montserrat";
-  position: absolute;
-  top: 120px;
-  color: white;
-  letter-spacing: 0.8rem;
-  font-size: 1.6rem;
-  background: linear-gradient(90deg, #68e0cf 0%, #0b1edf 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+/* MAIN CONTAINER -----------------------------------------------------------------------------------------------------------------------------------------------------*/
 .container {
   margin: 40px 0;
   width: 600px;
@@ -39,53 +26,29 @@ button {
   border-radius: 35px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.45), 0 4px 8px rgba(0, 0, 0, 0.35), 0 8px 12px rgba(0, 0, 0, 0.15);
   font-family: "Montserrat";
+  /* MAIN TITLE */
+  /* PASSWORD VIEWBOX CONTAINER */
 }
 .container_title {
-  margin: 10px -5px;
-  margin-bottom: 25px;
-  color: #fff;
-  text-align-last: center;
-  letter-spacing: 0.6rem;
-  font-size: 1.6rem;
-}
-.container_sub {
-  margin: 10px -5px;
-  margin-bottom: 40px;
-  color: #fff;
-  text-align-last: center;
-  letter-spacing: 0.6rem;
-  font-size: 1.6rem;
-}
-.container_sub_title {
   margin: 10px 5px;
   margin-bottom: 40px;
-  color: #fff;
+  color: white;
   letter-spacing: 0.6rem;
   font-size: 1.3rem;
+}
+.container #random {
+  color: #626EEA;
+}
+.container #password {
+  color: #68e0cf;
+}
+.container #free {
+  color: #916EB4;
 }
 .container_password {
   position: relative;
   width: 100%;
   height: 7vh;
-}
-.container_password_title {
-  position: absolute;
-  top: -20px;
-  left: 8px;
-  font-weight: 800;
-  color: #ffffff;
-  text-transform: uppercase;
-  font-size: 0.65rem;
-}
-.container_password_viewbox {
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
-  color: #fff;
-  text-align: center;
-  line-height: 7vh;
-  letter-spacing: 0.1rem;
 }
 .container_password_right {
   right: 15px;
@@ -100,22 +63,32 @@ button {
 .container_password_right {
   position: absolute;
   bottom: 4px;
-  color: #fff;
+  color: white;
   font-size: 0.8rem;
   transition: all 150ms ease-in-out;
   transform: translateY(200%);
   opacity: 0;
 }
-#random {
-  color: #626EEA;
+.container_password_title {
+  position: absolute;
+  top: -20px;
+  left: 8px;
+  font-weight: 800;
+  color: white;
+  text-transform: uppercase;
+  font-size: 0.65rem;
 }
-#password {
-  color: #68e0cf;
+.container_password_viewbox {
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  color: white;
+  text-align: center;
+  line-height: 7vh;
+  letter-spacing: 0.1rem;
 }
-#free {
-  color: #916EB4;
-}
-/* SETTINGS ----------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* SETTINGS CONTAINER  -----------------------------------------------------------------------------------------------------------------------------------------*/
 .settings {
   position: relative;
   height: auto;
@@ -133,7 +106,7 @@ button {
   top: -20px;
   left: 8px;
   font-weight: 800;
-  color: #ffffff;
+  color: white;
   text-transform: uppercase;
   font-size: 0.65rem;
 }
@@ -149,9 +122,9 @@ button {
   color: #fff;
   margin-bottom: 8px;
   letter-spacing: 0.2rem;
+  /* HIDE DEFAULT HTML CHECKBOX  */
 }
 .settings_opt input {
-  /* Hide default HTML checkbox  ----------------------------------*/
   opacity: 0;
   position: absolute;
 }
@@ -162,7 +135,7 @@ button {
   margin-left: 10px;
 }
 /* TOGGLE BUTTON  ----------------------------------------------------------------------------------------------------------------------------------------------------*/
-/* Cria o fundo do Toggle nas Opt -----------------*/
+/* CREATES THE BACKGROUND OF THE TOGGLE BUTTON */
 .slider {
   position: absolute;
   cursor: pointer;
@@ -175,8 +148,9 @@ button {
   width: 70px;
   margin-top: 20px;
   margin-bottom: 13px;
+  /* TOGGLE IN A ROUND SHAPE*/
+  /* TO BE ROUND INSTEAD OF SQUARE */
 }
-/* Forma do Toggle em bolinha ----------------*/
 .slider:before {
   position: absolute;
   content: "";
@@ -188,28 +162,29 @@ button {
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
-/* Quando activo o fundo muda de cor para azul  ----------------*/
-input:checked + .slider {
-  background-color: #68e0cf;
-}
-input:focus + .slider {
-  box-shadow: 0 0 0 5px white;
-}
-/* Quando activo desloca-se para a direita ----------------*/
-input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
-}
-/* Para ficar rendondo em vez de quadrado */
 .slider.round {
   border-radius: 34px;
 }
 .slider.round:before {
   border-radius: 50%;
 }
+input {
+  /* WHEN ACTIVE CHANGES THE BACKGROUND COLOR */
+}
+input:checked + .slider {
+  background-color: #68e0cf;
+  /* WHEN ACTIVE MOVES TO THE RIGHT */
+}
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+input:focus + .slider {
+  box-shadow: 0 0 0 5px white;
+}
 /* LENGHT   --------------------------------------------------------------------------------------------------------------------------------------------------------*/
-/* Linha do Lenght, aparencia mais geral e posicao -----------------*/
+/* LENGHT LINE, MORE GENERAL APPEARANCE AND POSITION */
 #line {
   -webkit-appearance: none;
   width: 465px;
@@ -217,14 +192,14 @@ input:checked + .slider:before {
   border-radius: 5px;
   background: rgba(255, 255, 255, 0.5);
   cursor: pointer;
-  /* Bolinha do Lenght -----------------*/
+  /* LENGTH CIRCLE APPEARANCE */
 }
 #line::-webkit-slider-thumb {
   -webkit-appearance: none;
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: #ffffff;
+  background: white;
   cursor: pointer;
   transition: all 0.15s ease-in-out;
 }
@@ -232,7 +207,7 @@ input:checked + .slider:before {
   background: rgba(214, 214, 214, 0.8);
   transform: scale(1.2);
 }
-/* Linha do Lenght, aparencia mais detalhada -----------------*/
+/* LENGHT LINE, MORE DETAILED APPEARANCE */
 .length_line {
   position: relative;
   width: 100%;
@@ -243,7 +218,7 @@ input:checked + .slider:before {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 20px;
   margin: 30px 0;
-  /* Os numeros do Lenght -----------------*/
+  /* LENGTH VALUES */
 }
 .length_line::before,
 .length_line::after {
@@ -270,7 +245,7 @@ input:checked + .slider:before {
   top: -20px;
   left: 8px;
   font-weight: 800;
-  color: #ffffff;
+  color: white;
   text-transform: uppercase;
   font-size: 0.65rem;
 }
@@ -295,6 +270,7 @@ input:checked + .slider:before {
   transform: translateY(-8%);
   box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
 }
+/* COPYRIGHT ---------------------------------------------------------------------------------------------------------------------------------------------------*/
 .copyright {
   flex: 100%;
   flex-wrap: wrap;
@@ -324,3 +300,4 @@ input:checked + .slider:before {
   color: white;
   cursor: pointer;
 }
+/* THE END ---------------------------------------------------------------------------------------------------------------------------------------------------*/

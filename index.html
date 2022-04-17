@@ -9,19 +9,17 @@
     <link rel="stylesheet" href="css/index.css">
 </head>
     <body>
-        
-<!-- 
-        <h2 class="title">Password Generator</h2> -->
 
-        <!-- Caixa Envolvente Principal ----------------------------------------------------------------------------------------------------------------------------------------- -->
+        <!-- MAIN CONTAINER ----------------------------------------------------------------------------------------------------------------------------------------- -->
        <div class="container">
 
-            <!-- <h2 class="container_title">Password Generator <i class="fa-solid fa-meteor fa-beat"></i></h2> -->
-
-            <h2 class="container_sub_title">Generate a <span id="free">free</span> <br> <span id="random"> random <span id="password"> Password </span></span><i class="fa-solid fa-meteor fa-beat"></i></h2>
+            <!-- MAIN TITTLE ---------------------------------------------------------------------------------------------------------------------------------------- -->
+            <h2 class="container_title">Generate a <span id="free">free</span> <br> <span id="random"> random <span id="password"> Password </span></span><i class="fa-solid fa-meteor fa-beat"></i></h2>
 
             <!-- <h2 class="title">Never use as Insecure Password again !</h2> -->
 
+
+            <!-- PASSWORD VIEWBOX CONTAINER ------------------------------------------------------------------------------------------------------------------------- -->
             <div class="container_password">
                 <span class="container_password_title">Generated Password <i class="fa-solid fa-bolt"></i></span>
 
@@ -32,7 +30,7 @@
 
             </div>
 
-            <!-- Password Button Length ---------------------------------------------------------------------------------------------------------------------------------------- -->
+            <!-- PASSWORD LENGTH CONTAINER ---------------------------------------------------------------------------------------------------------------------------- -->
             <div class="length">
 
                     <div class="length_title_number"></div>
@@ -41,69 +39,71 @@
                     <div class="length_title" data-length='0'>Password Length:</div>
                     <input id="line" type="range" min="4" max="20" value="12" />
                 </div>
+
             </div>
 
-            <!-- Settings ---------------------------------------------------------------------------------------------------------------------------------------------------- -->
-           
+           <!-- SETTINGS CONTAINER - TOGGLE BUTTONS ------------------------------------------------------------------------------------------------------------------- -->
            <div class="settings_container">
 
-            <!-- Toggle Button --------------------------------------------------------------------------------------------------------------------------------------------- -->
+                <div class="settings" id="left">
 
-            <div class="settings" id="left">
+                    <div class="settings_title">
+                     <span>Select at least one Setting </span>
+                    </div>
 
-                <div class="settings_title">
-                    <span>Select at least one Setting </span>
+                    <div class="settings_opt">
+                        <label class="switch">
+                            Uppercases 
+                            <input type="checkbox" id="settings_upp">
+                            <span class="slider round"></span>
+                        </label> 
+                    </div>
+
+                    <div class="settings_opt">
+                        <label class="switch">
+                            Lowercases
+                            <input type="checkbox" id="settings_low" checked> 
+                            <span class="slider round" checked>
+                        </label>
+                    </div>
+
                 </div>
 
-                <div class="settings_opt">
-                    <label class="switch">
-                        Uppercases 
-                        <input type="checkbox" id="settings_upp">
-                        <span class="slider round"></span>
-                    </label> 
-                </div>
+                <div class="settings" id="right">
 
-                <div class="settings_opt">
-                    <label class="switch">
-                        Lowercases
-                        <input type="checkbox" id="settings_low" checked> 
-                        <span class="slider round" checked>
-                    </label>
+                    <div class="settings_opt">
+                        <label class="switch">
+                            Numbers
+                            <input type="checkbox" id="settings_numbers">
+                            <span class="slider round">
+                        </label>
+                    </div>
+
+                    <div class="settings_opt">
+                        <label class="switch">
+                            Symbols
+                            <input type="checkbox" id="settings_symbols">
+                            <span class="slider round">
+                        </label>
+                    </div>
                 </div>
 
             </div>
-
-            <div class="settings" id="right">
-
-                <div class="settings_opt">
-                    <label class="switch">
-                        Numbers
-                        <input type="checkbox" id="settings_numbers">
-                        <span class="slider round">
-                    </label>
-                </div>
-
-                <div class="settings_opt">
-                    <label class="switch">
-                        Symbols
-                        <input type="checkbox" id="settings_symbols">
-                        <span class="slider round">
-                    </label>
-                </div>
-            </div>
+        
+            <!-- GENERATE PASSWORD BUTTON ------------------------------------------------------------------------------------------------------------------------------ -->
+            <button class="generate_btn" id="generate"> Generate here a secure Password <i class="fa-solid fa-bolt fa-shake"></i></button>
 
         </div>
-        
 
-            <!-- Generate Password Button ---------------------------------------------------------------------------------------------------------------------------------- -->
-                <button class="generate_btn" id="generate"> Generate here a secure Password <i class="fa-solid fa-bolt fa-shake"></i></button>
-       </div>
 
-       <div class="copyright ">
-        <p><i class="fa-solid fa-copyright"></i><a href="http://concha-reis.pt" id="Concha"> Copyright Concha Reis <span id="year"></span> </a><span id="terms">I Terms & Conditions</span></p>
-    </div>
+        <!-- COPYRIGHT  ------------------------------------------------------------------------------------------------------------------------------------------------ -->
+        <div class="copyright">
 
-        <!-- END ------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+            <p><i class="fa-solid fa-copyright"></i><a href="http://concha-reis.pt" id="Concha"> Copyright Concha Reis <span id="year"></span> </a><span id="terms">I Terms & Conditions</span></p>
+
+        </div>
+
+        <!-- THE END --------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
         <script src="/index.js"></script>
 

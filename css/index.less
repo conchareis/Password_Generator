@@ -1,29 +1,14 @@
+/* COLORS ----------------------------------------------------------------------------------------------------------------------------------------------------*/
 
-/* Colors ----------------------------------------------------------------------------------------------------------------------------------------------------*/
 @purple: #764ba2;
 @purple-blue: #667eea;
 @blue: #68e0cf;
 @dark-blue: rgb(11, 30, 223);
+@random-color: #626EEA;
+@free-color: #916EB4;
+@container-background: #2A2A32;
 
-@bolinha-color: rgb(255, 255, 255);
-@bolinha-color-hover: rgb(212, 212, 212);
-@bolinha-size: 20px;
-
-@range-track-color: rgba(255, 255, 255, 0.314);
-@range-track-height: 2px;
-
-@range-label-width: 60px;
-
-/* Grid Breakpoints ------------------------------------------------------------------------------------------------------------------------------------------*/
-
-@mq-xl: ~"(max-width: 1199.98px)";
-@mq-lg: ~"(max-width: 991.98px)";
-@mq-md: ~"(max-width: 768px)";
-@mq-sm: ~"(max-width: 575.98px)";
-@mq-xs: ~"(max-width: 425px)";
-
-
-/* Global Styles----------------------------------------------------------------------------------------------------------------------------------------------*/
+/* GLOBAL STYLES ----------------------------------------------------------------------------------------------------------------------------------------------*/
 
 * {
 	margin: 0;
@@ -34,8 +19,7 @@
 body {
 	width: 100%;
 	height: 100vh;
-	// background-image: linear-gradient(90deg, @blue 0%, @purple 50%, @purple-blue 100% );
-	background-image: linear-gradient(90deg, #68e0cf 0%, #764ba2 55%, #667eea 100%);
+	background-image: linear-gradient(90deg, @blue 0%, #764ba2 55%, @purple-blue 100%);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -46,71 +30,74 @@ button {
 	outline: 0;
 }
 
-/* CAIXA ENVOLVENTE PRINCIPAL -----------------------------------------------------------------------------------------------------------------------------------------------------*/
-.title {
-	margin: 40px 0;
-	font-family: "Montserrat";
-	position: absolute;
-	top: 120px;
-	color: white;
-	letter-spacing: 0.8rem;
-	font-size: 1.6rem;
-	background: linear-gradient(90deg, @blue 0%, @dark-blue 100% );
-	// background: linear-gradient(90deg, @dark-blue 0%, @blue 100% );
-	// background: -webkit-linear-gradient(@purple-blue, @purple);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-}
+/* MAIN CONTAINER -----------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 .container {
 	margin: 40px 0;
-	width: 600px;
-	// height: 600px;
+	width: 600px;;
 	padding: 10px 25px;
-	// background: #0a0e31;
-	background: #2A2A32;
+	background: @container-background;
 	border-radius: 35px;
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.45), 0 4px 8px rgba(0, 0, 0, 0.35), 0 8px 12px rgba(0, 0, 0, 0.15);
 	font-family: "Montserrat";
 
+	/* MAIN TITLE */
 	&_title {
-		margin: 10px -5px;
-		margin-bottom: 25px;
-		color: #fff;
-		text-align-last: center;
-		letter-spacing: 0.6rem;
-		font-size: 1.6rem;
-	}
-
-	&_sub {
-		margin: 10px -5px;
+		margin: 10px 5px;
 		margin-bottom: 40px;
-		color: #fff;
-		text-align-last: center;
+		color: white;
 		letter-spacing: 0.6rem;
-		font-size: 1.6rem;
-
-		&_title {
-			margin: 10px 5px;
-			margin-bottom: 40px;
-			color: #fff;
-			letter-spacing: 0.6rem;
-			font-size: 1.3rem;
-		}
+		font-size: 1.3rem;
 	}
 
+	#random {
+		color: @random-color;
+	}
+	
+	#password {
+		color: @blue;
+	}
+	
+	#free {
+	color: @free-color;
+	}	
+
+	/* PASSWORD VIEWBOX CONTAINER */
 	&_password {
 		position: relative;
     	width: 100%;
     	height: 7vh;
+
+		&_right {
+			right: 15px;
+	
+			&:hover {
+				cursor: pointer;
+			}
+		}
+		
+		&_left {
+			left: 15px;
+	
+		}
+	
+		&_left,
+		&_right {
+			position: absolute;
+			bottom: 4px;
+			color: white;
+			font-size: 0.8rem;
+			transition: all 150ms ease-in-out;
+			transform: translateY(200%);
+			opacity: 0;
+		}
 
 		&_title {
 			position: absolute;
 			top: -20px;
 			left: 8px;
 			font-weight: 800;
-			// color:rgba(255, 255, 255, 1);
-			color:rgba(255, 255, 255, 1);
+			color:white;
 			text-transform: uppercase;
 			font-size: 0.65rem;
 		}
@@ -120,58 +107,16 @@ button {
     	height: 100%;
     	background: rgba(255, 255, 255, 0.1);
     	border-radius: 20px;
-    	color: #fff;
+    	color: white;
     	text-align: center;
     	line-height: 7vh;
 		letter-spacing: 0.1rem;
-		// text-transform: uppercase;
 		}
 	}
 }
 
-.container_password {
 
-	&_right {
-		right: 15px;
-
-		&:hover {
-			cursor: pointer;
-		}
-	}
-	
-	&_left {
-		left: 15px;
-
-	}
-
-	&_left,
-	&_right {
-		position: absolute;
-		bottom: 4px;
-		color: #fff;
-		font-size: 0.8rem;
-		transition: all 150ms ease-in-out;
-		transform: translateY(200%);
-		opacity: 0;
-	}
-}
-
-#random {
-	color: #626EEA;
-}
-
-#password {
-	color: @blue;
-}
-
-#free {
-// color: #BAA5D0;
-// color:#9F81BD;
-color: #916EB4;
-}
-
-
-/* SETTINGS ----------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* SETTINGS CONTAINER  -----------------------------------------------------------------------------------------------------------------------------------------*/
 
 .settings {
     position: relative;
@@ -187,19 +132,11 @@ color: #916EB4;
 	}
 
 	&_title {
-		// position: absolute;
-    	// bottom: 464px;
-    	// left: 673px;
-    	// font-weight: 800;
-    	// color:rgba(255, 255, 255, 1);
-    	// text-transform: uppercase;
-    	// font-size: 0.65rem;
-
 		position: absolute;
 		top: -20px;
 		left: 8px;
 		font-weight: 800;
-		color:rgba(255, 255, 255, 1);
+		color:white;
 		text-transform: uppercase;
 		font-size: 0.65rem;
 	}
@@ -217,8 +154,8 @@ color: #916EB4;
 		margin-bottom: 8px;
 		letter-spacing: 0.2rem;
 
+		/* HIDE DEFAULT HTML CHECKBOX  */
 		input {
-			/* Hide default HTML checkbox  ----------------------------------*/
 			opacity: 0;
 			position: absolute;
 		}
@@ -235,66 +172,68 @@ color: #916EB4;
 
 /* TOGGLE BUTTON  ----------------------------------------------------------------------------------------------------------------------------------------------------*/
 
-/* Cria o fundo do Toggle nas Opt -----------------*/
+/* CREATES THE BACKGROUND OF THE TOGGLE BUTTON */
 .slider {
 	position: absolute;
 	cursor: pointer;
 	top: 0;
-	// left: 0;
 	right: 10px;
 	bottom: 0;
-	// background-color: #916EB4;
 	background-color: #BFBFBF;
-	// background-color: @purple;
-	// background-color: rgba(118, 75, 162, 0.5);
 	-webkit-transition: .4s;
 	transition: .4s;
 	width: 70px;
 	margin-top: 20px;
 	margin-bottom: 13px;
+
+	/* TOGGLE IN A ROUND SHAPE*/
+	&:before {
+		position: absolute;
+		content: "";
+		height: 26px;
+		width: 26px;
+		left: 9px;
+		bottom: 5.5px;
+		background-color: white;
+		-webkit-transition: .4s;
+		transition: .4s;
+	}
+
+	 /* TO BE ROUND INSTEAD OF SQUARE */
+	&.round {
+		border-radius: 34px;
+	
+		&:before {
+			border-radius: 50%;
+		}
+	}
+	  
 }
 
-/* Forma do Toggle em bolinha ----------------*/
-.slider:before {
-	position: absolute;
-	content: "";
-	height: 26px;
-	width: 26px;
-	left: 9px;
-	bottom: 5.5px;
-	background-color: white;
-	-webkit-transition: .4s;
-	transition: .4s;
-}
-  
-/* Quando activo o fundo muda de cor para azul  ----------------*/
-input:checked + .slider {
-	background-color: @blue;
-}
-  
-input:focus + .slider {
-	box-shadow: 0 0 0 5px white;
+
+input {
+
+	/* WHEN ACTIVE CHANGES THE BACKGROUND COLOR */
+	&:checked + .slider {
+		background-color: @blue;
+
+		/* WHEN ACTIVE MOVES TO THE RIGHT */
+		&:before {
+			-webkit-transform: translateX(26px);
+			-ms-transform: translateX(26px);
+			transform: translateX(26px);
+		}
+	}
+
+	&:focus + .slider {
+		box-shadow: 0 0 0 5px white;
+	}
 }
 
-/* Quando activo desloca-se para a direita ----------------*/
-input:checked + .slider:before {
-	-webkit-transform: translateX(26px);
-	-ms-transform: translateX(26px);
-	transform: translateX(26px);
-}
-  
- /* Para ficar rendondo em vez de quadrado */
-.slider.round {
-	border-radius: 34px;
-}
-  
-.slider.round:before {
-	border-radius: 50%;
-}
 
 /* LENGHT   --------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
-/* Linha do Lenght, aparencia mais geral e posicao -----------------*/
+/* LENGHT LINE, MORE GENERAL APPEARANCE AND POSITION */
 #line {
 	-webkit-appearance: none;
 	width: 465px;
@@ -303,13 +242,13 @@ input:checked + .slider:before {
 	background: rgba(255, 255, 255, 0.5);
 	cursor: pointer;
 
-	/* Bolinha do Lenght -----------------*/
+	/* LENGTH CIRCLE APPEARANCE */
 	&::-webkit-slider-thumb {
 		-webkit-appearance: none;
-		width: @bolinha-size;
-		height: @bolinha-size;
+		width: 20px;
+		height: 20px;
 		border-radius: 50%;
-		background: @bolinha-color;
+		background: white;
 		cursor: pointer;
 		transition: all 0.15s ease-in-out;
 
@@ -320,9 +259,7 @@ input:checked + .slider:before {
 	}
 }
 
-
-
-/* Linha do Lenght, aparencia mais detalhada -----------------*/
+/* LENGHT LINE, MORE DETAILED APPEARANCE */
 .length {
 
 	&_line {
@@ -336,7 +273,7 @@ input:checked + .slider:before {
     	border-radius: 20px;
     	margin: 30px 0;
 		
-/* Os numeros do Lenght -----------------*/
+		/* LENGTH VALUES */
 		&::before,
 		&::after {
 			position: absolute;
@@ -359,7 +296,6 @@ input:checked + .slider:before {
 			content: attr(data-length);
 			position: absolute;
 			right: -16px;
-			// color: #fff;
 		}
 	}
 
@@ -368,7 +304,7 @@ input:checked + .slider:before {
     	top: -20px;
     	left: 8px;
     	font-weight: 800;
-    	color:rgba(255, 255, 255, 1);
+    	color:white;
     	text-transform: uppercase;
     	font-size: 0.65rem;
 	}
@@ -405,7 +341,7 @@ input:checked + .slider:before {
 
 
 
-
+/* COPYRIGHT ---------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 .copyright {
     flex: 100%;
@@ -444,3 +380,5 @@ input:checked + .slider:before {
 		cursor: pointer;
 	  } 
   }
+
+  /* THE END ---------------------------------------------------------------------------------------------------------------------------------------------------*/
